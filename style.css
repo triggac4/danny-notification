@@ -104,6 +104,17 @@ body {
     background-color: transparent;
     color: inherit;
     cursor: pointer;
+    transition: all 0.4s;
+    box-shadow: none;
+    transform: scale(1);
+}
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 1px 2px 4px black;
+}
+.btn:focus {
+    transform: scale(1);
+    box-shadow: none;
 }
 @media (max-width: 56.25em) {
     .notification-body__btn {

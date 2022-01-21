@@ -75,6 +75,7 @@ header.children[1].addEventListener("click", function () {
 
     noteBody.append("You have no Pending notifications");
     header.children[0].textContent = `Messages (${notificationList.length})`;
+    header.setAttribute("style", "background-color:gray");
 });
 function createElement(name, className = "") {
     const createdElement = document.createElement(name);
@@ -130,6 +131,10 @@ function createNotification({ id, img, name, writeUp: { head, body, time } }) {
             notificationList.splice(index, 1);
         }
         header.children[0].textContent = `Messages (${notificationList.length})`;
+        if (notificationList.length === 0) {
+            header.setAttribute("style", "background-color:gray");
+            noteBody.append("You have no Pending notifications");
+        }
     });
 
     //put it all together
